@@ -1,0 +1,34 @@
+@startuml kabanov1
+skinparam usecase {
+    BackgroundColor DarkSeaGreen
+    BorderColor DarkSlateGray
+
+    ArrowColor Black
+    ActorBorderColor black
+    ActorFontName Courier
+}
+skinparam actorStyle awesome
+Студент as st
+
+Декан as dk
+
+package "Информационная система деканата" {
+    usecase "Принять в вуз" as UC1
+    usecase "Отчислить из Вуза " as UC2
+    usecase "Перевести на другой курс " as UC3
+    usecase "Перевести в другую группу " as UC4
+    usecase "Просмотреть оценки конкретного студента" as UC5
+}
+
+st <--UC1
+st <--UC2
+st <--UC3
+st <--UC4
+st --UC5: только свои оценки
+
+dk -up-UC1
+dk -up-UC2
+dk -up-UC3
+dk -up-UC4
+dk -up-UC5
+@enduml
