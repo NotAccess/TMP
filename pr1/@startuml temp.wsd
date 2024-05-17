@@ -1,0 +1,23 @@
+@startuml еуые
+
+class DeanerySystem {
+    acceptStudent()
+    + expelStudent()
+    + recordAcademicPerformance()
+    + transferStudent()
+}
+
+class Student {
+    + viewGrades()
+    + enrollInCourse()
+}
+
+class Dean {
+    + approveTransfer()
+    + manageDeanerySystem()
+}
+
+Dean -- DeanerySystem : uses
+Student -- DeanerySystem : uses
+
+@enduml
